@@ -23,7 +23,7 @@ const getAllConnectedClients = (id) => {
 }
 
 const userSocketMap = {};
-
+const doubts = {};
 io.on('connection', (socket)=>{
     console.log('connected', socket.id);
     socket.on(ACTIONS.JOIN, ({id, username})=> {
@@ -38,6 +38,18 @@ io.on('connection', (socket)=>{
             });
         })
     });
+    socket.on(ACTIONS.DOUBT, ({id, username, doubt}) => {
+        doubts[username] = doubt;
+        console.log(doubts);
+        const clients = getAllConnectedClients(id);
+        clients.forEach(( {socketId} )=>{
+            io.to(socketId).emit(ACTIONS.DOUBT, {
+                doubts,
+                username,
+                socketId: socket.id
+            });
+        })
+    })
     socket.on(ACTIONS.CODE_CHANGE, ({id, code})=> {
         socket.in(id).emit(ACTIONS.SYNC_CODE, {
             code
