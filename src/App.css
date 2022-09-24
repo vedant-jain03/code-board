@@ -2,17 +2,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  height: 100vh;
+  color: #56516D;
+  height: 50vh;
 }
 
 .form_wrapper {
-  background: #282a36;
+  background: #E8E7E7;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  display: flex;
+  width: 508px;
   max-width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 footer {
   position: fixed;
   bottom: 0;
@@ -40,14 +45,16 @@ margin: 0;
 margin-right: 7px;
 }
 .inputBox {
+
   padding: 10px;
-  border-radius: 5px;
+
   outline: none;
-  border: none;
   margin-bottom: 14px;
-  background: #eee;
+  background: #FFF9F9;
   font-size: 16px;
   font-weight: bold;
+  border: 1px solid rgba(255, 159, 69, 0.65);
+    border-radius: 12px;
 }
 
 .btn {
@@ -60,25 +67,26 @@ margin-right: 7px;
   transition: all 0.3s ease-in-out;
 }
 .joinBtn {
-  background: #4aed88;
+  background: #FA526A;
   width: 100px;
   margin-left: auto;
+  color: white;
 }
 .joinBtn:hover {
-  background: #2b824c;
+  background: #a33a4a;
 }
 .createInfo {
-  margin: 0 auto;
+  margin: 0 5px;
   margin-top: 20px;
 }
 .createNewBtn {
-  color: #4aed88;
+  color: #FA526A;
   text-decoration: none;
   border-bottom: 10px;
   transition: 0.3s all ease-in-out;
 }
 .createNewBtn:hover {
-  color: #2b824c;
+  color: #a33a4a;
 }
 .mainWrap {
   display: grid;
@@ -124,4 +132,7 @@ margin-right: 7px;
   line-height: 1.6;
   padding-top: 20px;
   min-height: calc(100vh - 20px);
+}
+.home-image{
+  width: 21rem;
 }
