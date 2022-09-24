@@ -74,11 +74,13 @@ const Home1 = () => {
                     width: "50px",
                     float: "right",
                     margin: "0rem 0rem 40rem",
+                    cursor: "pointer",
                 }} className='darkModeBtn' onClick={toggleDarkMode} /> : <img src={moon} alt="2" className='darkModeBtn' style={
                     {
                         width: "50px",
                         float: "right",
                         margin: "0rem 0rem 40rem",
+                        cursor: "pointer",
                     }
                 } onClick={toggleDarkMode} />}
                 <footer>
