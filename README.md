@@ -1,9 +1,11 @@
 <h1 align="center"> 
-              ✨ Welcome to Code-Meet ✨ 
+  
+ ✨ Welcome to Code-Meet ✨ 
 
-</h1>
+![3767561](https://user-images.githubusercontent.com/77020164/192100862-e4813af6-2eac-4fb1-8c3c-7671fdddc3fd.png)
+  
+ </h1>
 
- 
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
