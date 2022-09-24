@@ -1,7 +1,6 @@
 {
   "name": "teach_code_online",
   "version": "0.1.0",
-  "homepage": "https://vedant-jain03.github.io/code_bode",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -23,8 +22,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start:front": "react-scripts start",
     "start": "npm run build && npm run server:prod",
     "build": "react-scripts build",
