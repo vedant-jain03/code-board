@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import ACTIONS from '../Action';
 import Client from '../components/Client';
 import Editor from '../components/Editor';
+import Doubt from '../components/Doubt';
 import { initSocket } from '../Socket';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import toast from 'react-hot-toast';
@@ -10,6 +11,11 @@ import logo from "../logo.webp"
 function EditorPage() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isChatShown,setChatShown]=useState(false);
+  const handleChat=(e)=>{
+    e.preventDefault();
+    setChatShown(true);
+  }
   const { id } = useParams();
   console.log(id)
   const socketRef = useRef(null);
@@ -85,6 +91,10 @@ function EditorPage() {
       </div>
       <div className="editorWrap">
         <Editor socketRef={socketRef} id={id} />
+      </div>
+      <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
+      <div className="chatSection">
+        {isChatShown && <Doubt status={setChatShown}/>}
       </div>
     </div>
   )

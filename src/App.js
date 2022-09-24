@@ -1,4 +1,5 @@
 import './App.css';
+import './Doubt.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home1 from './pages/Home1';
 import EditorPage from './pages/EditorPage';

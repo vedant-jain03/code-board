@@ -1,0 +1,71 @@
+
+.doubtBtn{
+    background: #4aed88;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 16px;
+    padding: 15px;
+  }
+  .doubtBtn:hover{
+    background: #2b824c;
+  }
+  .chatSection{
+    background: #1c1e29;
+    padding: 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    height: 100%;
+  }
+  .messageCont{
+    border-radius: 20px 4px 4px 20px;
+    min-height: 20px;
+    padding: 10px;
+    margin-left: auto;
+    border:2px solid#4aed88 ;
+    position: relative;
+  }
+  .doubtCont{
+    background: #1c1e29;
+    padding: 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  .inLine{
+    display: flex;
+    flex-direction: row;
+  }
+  .inputBox{
+    width: 80%;
+    color: white;
+    background-color: #2c303a;
+    margin: 20px;
+    padding: 15px;
+  }
+  .chatArea{
+    flex:1;
+  }
+  
+  .userAvatar{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #2c303a;
+    border: 2px solid #2c303a;
+  }
+  .exitBtn{
+    position: absolute;
+    right: 0;
+    background-color: #4aed88;
+    margin: 15px;
+  }
+  
+  .sendBtn{
+    height: 60%;
+    background-color: #4aed88;
+    margin: 20px;
+  }
