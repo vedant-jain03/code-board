@@ -13,6 +13,8 @@ function EditorPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isChatShown, setChatShown] = useState(false);
+  const [doubt,setDoubt] = useState("");
+  const [allDoubts, setAllDoubts] = useState({});
   const handleChat = (e) => {
     e.preventDefault();
     setChatShown(true);
@@ -34,6 +36,12 @@ function EditorPage() {
         username: location.state.username
       });
 
+      // Listening for doubt event
+      socketRef.current.on(ACTIONS.DOUBT, ({doubts, username, socketId})=>{
+        console.log(doubts);
+        setAllDoubts(doubts);
+        toast.success(`${username} asked a doubt!`)
+      })
       // Listening for joined event
       socketRef.current.on(ACTIONS.JOINED, ({ clients, username, socketId }) => {
         setclients(clients);
@@ -71,6 +79,14 @@ function EditorPage() {
       toast.error(err);
     }
   }
+  async function askDoubt() {
+    socketRef.current.emit(ACTIONS.DOUBT, {
+      id,
+      username: location.state.username,
+      doubt
+    })
+    setDoubt("");
+  }
   function leaveRoom() {
     navigate('/');
     toast.success('You leaved the Room');
@@ -94,7 +110,7 @@ function EditorPage() {
         <Editor socketRef={socketRef} id={id} />
       </div>
       <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
-      {isChatShown && <DoubtSection status={setChatShown} />}
+      {isChatShown && <DoubtSection status={setChatShown} setDoubt={setDoubt} doubt={doubt} askDoubt={askDoubt} allDoubts={allDoubts} />}
     </div>
   )
 }
