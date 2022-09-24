@@ -4,7 +4,6 @@
 </h1>
 
  
-![CPT2209171908-1527x714](https://user-images.githubusercontent.com/77020164/190859870-80877225-8f98-4390-b8da-cc11c1105c72.gif)
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
