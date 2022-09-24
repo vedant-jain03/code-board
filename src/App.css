@@ -123,13 +123,13 @@ margin-right: 7px;
 }
 
 .leaveBtn {
-  background: #4aed88;
+  background: #FFBC80;
   margin-top: 20px;
   transition: 0.3s all ease-in-out;
 }
 
 .leaveBtn:hover {
-  background: #2b824c;
+  background: #dea879;
 }
 .CodeMirror {
   font-size: 15px;
@@ -278,4 +278,82 @@ margin-right: 7px;
 .codeimage {
   bottom: 0;
   width: 350px;
+}
+
+.doubt_section_container {
+  background: #1c1e29;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    overflow-y: scroll;
+    width: 300px;
+    overflow-x: hidden;
+}
+
+.doubt_section_container .header {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.doubt_section_container .header button {
+  background: none;
+    border: 0;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.doubt {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #0D1125;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.doubt .client {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.doubt .doubt_text {
+  font-size: 10px;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+.ask_doubt_wrapper {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.ask_doubt_wrapper input {
+  width: 70%;
+  border: 0;
+  background: #100b26;
+  padding: 10px;
+  outline: none;
+  color: white;
+  border-radius: 3px;
+  margin-right: 10px;
+  height: 20px;
+}
+
+.client .userName {
+  margin-bottom: 0px;
+  font-size: 12px;
+  margin-left: 10px;
 }

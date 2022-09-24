@@ -7,12 +7,13 @@ import { initSocket } from '../Socket';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import logo from "../logo.webp"
+import DoubtSection from '../components/DoubtSection';
 
 function EditorPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isChatShown,setChatShown]=useState(false);
-  const handleChat=(e)=>{
+  const [isChatShown, setChatShown] = useState(false);
+  const handleChat = (e) => {
     e.preventDefault();
     setChatShown(true);
   }
@@ -34,18 +35,18 @@ function EditorPage() {
       });
 
       // Listening for joined event
-      socketRef.current.on(ACTIONS.JOINED, ({clients, username, socketId})=>{
+      socketRef.current.on(ACTIONS.JOINED, ({ clients, username, socketId }) => {
         setclients(clients);
-        if(username!== location.state.username) {
+        if (username !== location.state.username) {
           toast.success(`${username} joined the room.`)
         }
       })
 
       // Disconnecting the user listener
-      socketRef.current.on(ACTIONS.DISCONNECTED, ({socketId, username})=> {
+      socketRef.current.on(ACTIONS.DISCONNECTED, ({ socketId, username }) => {
         toast.success(`${username} left the room.`);
-        setclients((prev)=> {
-          return prev.filter((item)=>{
+        setclients((prev) => {
+          return prev.filter((item) => {
             return item.socketId !== socketId;
           })
         })
@@ -64,9 +65,9 @@ function EditorPage() {
   }
   async function copyRoomId() {
     try {
-      await window.navigator.clipboard.writeText(id);   
+      await window.navigator.clipboard.writeText(id);
       toast.success('Room id has been copied to clipboard!')
-    }catch(err) {
+    } catch (err) {
       toast.error(err);
     }
   }
@@ -93,9 +94,7 @@ function EditorPage() {
         <Editor socketRef={socketRef} id={id} />
       </div>
       <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
-      <div className="chatSection">
-        {isChatShown && <Doubt status={setChatShown}/>}
-      </div>
+      {isChatShown && <DoubtSection status={setChatShown} />}
     </div>
   )
 }
