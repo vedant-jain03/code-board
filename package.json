@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "codemirror": "^6.0.1",
+    "codemirror": "^5.65.2",
     "express": "^4.18.1",
     "nodemon": "^2.0.20",
     "react": "^18.2.0",
