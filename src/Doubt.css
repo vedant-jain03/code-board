@@ -1,6 +1,6 @@
 
 .doubtBtn{
-    background: #4aed88;
+  background: #FFBC80;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -8,7 +8,7 @@
     padding: 15px;
   }
   .doubtBtn:hover{
-    background: #2b824c;
+    background: #dea879;
   }
   .chatSection{
     background: #1c1e29;

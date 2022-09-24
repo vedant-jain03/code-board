@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:front": "react-scripts start",
+    "frontend": "react-scripts start",
     "start": "npm run build && npm run server:prod",
     "build": "react-scripts build",
     "server:prod": "node server.js",
