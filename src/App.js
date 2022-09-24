@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from './pages/Home';
+import Home1 from './pages/Home1';
 import EditorPage from './pages/EditorPage';
 import {Toaster} from "react-hot-toast"
 
@@ -18,7 +18,7 @@ function App() {
       </div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home1 />} />
           <Route path='/editor/:id' element={<EditorPage />} />
         </Routes>
       </BrowserRouter>
