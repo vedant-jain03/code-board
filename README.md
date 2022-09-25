@@ -31,7 +31,7 @@ Code-Meet is a website solely designed for Teachers and Students, to make learni
 
 * Students just need to enter the Code Room Unique Id Shared by their Teachers and can get in and learn without any hindrance.
 
-* All the joining will get alert toaster regarding events like joining of a new member or someone asked a doubt, so that everyone can see what is happening!
+* All the joinies will get alert toaster regarding events like joining of a new member or someone asked a doubt, so that everyone can see what is happening!
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
