@@ -56,6 +56,13 @@ We have a team of  **50%  first-time hackers** and each of them tried their best
 - [Issue Solved](https://github.com/vedant-jain03/code_bode/issues?q=is%3Aissue+)
 - [Commit History](https://github.com/vedant-jain03/code_bode/commits/master)
 
+|![Screenshot from 2022-09-25 13-24-44](https://user-images.githubusercontent.com/76901313/192133972-5d202b01-0d54-4a59-9cbe-61d436b1f578.png)| ![Screenshot from 2022-09-25 13-24-15](https://user-images.githubusercontent.com/76901313/192133974-51a6848f-afd4-407c-a9c8-159a6ec93d24.png)
+|-|-|
+| PR Merged  | Completed Issues |
+
+
+
+
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## What we learned 🕯️
