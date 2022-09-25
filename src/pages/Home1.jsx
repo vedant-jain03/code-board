@@ -11,6 +11,7 @@ import prop3 from "../images/prop3.png";
 import prop4 from "../images/prop4.png";
 import prop5 from "../images/prop5.png";
 import code from "../images/code.png"
+import bglogo from "../images/bglogo.png"
 
 const Home1 = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -51,6 +52,7 @@ const Home1 = () => {
     }
     return (
         <div className='homepagewrapper'>
+            <img src={bglogo} alt="2" className='darkModeBtn' style={{position: 'absolute', width:'400px', top:'10px', marginLeft:'1rem'}} />
             <div className="form_wrapper" style={{
                 backgroundColor: darkMode ? "#1C1C1C" : "#E8E7E7",
             }}>
@@ -73,13 +75,13 @@ const Home1 = () => {
             {darkMode ? <img src={sun} alt="2" style={{
                 width: "50px",
                 position: 'absolute',
-                top: '2rem',
+                top: '5rem',
                 cursor: "pointer",
             }} className='darkModeBtn' onClick={toggleDarkMode} /> : <img src={moon} alt="2" className='darkModeBtn' style={
                 {
                     width: "50px",
                     position: 'absolute',
-                    top: '2rem',
+                    top: '5rem',
                     cursor: "pointer",
                 }
             } onClick={toggleDarkMode} />}

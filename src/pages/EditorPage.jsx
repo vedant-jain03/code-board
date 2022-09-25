@@ -8,12 +8,12 @@ import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import logo from "../logo.webp"
 import DoubtSection from '../components/DoubtSection';
-
+import bglogo from "../images/bglogo.png"
 function EditorPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isChatShown, setChatShown] = useState(false);
-  const [doubt,setDoubt] = useState("");
+  const [doubt, setDoubt] = useState("");
   const [allDoubts, setAllDoubts] = useState({});
   const handleChat = (e) => {
     e.preventDefault();
@@ -37,7 +37,7 @@ function EditorPage() {
       });
 
       // Listening for doubt event
-      socketRef.current.on(ACTIONS.DOUBT, ({doubts, username, socketId})=>{
+      socketRef.current.on(ACTIONS.DOUBT, ({ doubts, username, socketId }) => {
         console.log(doubts);
         setAllDoubts(doubts);
         toast.success(`${username} asked a doubt!`)
@@ -95,11 +95,17 @@ function EditorPage() {
     <div className='mainWrap'>
       <div className="aside">
         <div className="asideInner">
-          <div className="logo"><h2 className='logo_design'><img src={logo} alt="" />Sync Code</h2></div>
-          <h3>Connected</h3>
+          <div className="logo"><h2 className='logo_design'><img src={bglogo} alt="" style={{width:'220px'}} /></h2></div>
+          <h3>Teacher</h3>
           <div className="clientsList">
             {
-              clients.map((item) => (<Client key={item.socketId} username={item.username} />))
+              clients.length !== 0 && <Client key={clients[0].socketId} username={clients[0].username} />
+            }
+          </div>
+          <h3>Students</h3>
+          <div className="clientsList">
+            {
+              clients.map((item, index) => ((index !== 0) && <Client key={item.socketId} username={item.username} />))
             }
           </div>
         </div>
