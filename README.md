@@ -82,7 +82,7 @@ We learned to team management, and each and everyone was assigned a task that th
 We are using GitHub for the following reasons:
 
 - Collaboration: GitHub makes it easy to share code with others and helps a lot in collaboration.
-- GitHub Project: We also used GitHub for planning and keeping track of our project and its progress with the help of the - GitHub project management tool.
+- Using lables: We have team of frontend, backend, content-writer, UI, we have used label in the issues for the respective work.
 - Using PRs and Issues: We are doing multiple PRs and building multiple issues to keep on track of the project.
 
 ## TechStack 🧑‍💻
