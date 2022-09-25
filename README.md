@@ -17,16 +17,12 @@ Teachers are always making learning easier for students so that they can excel, 
 ## What it does ⛳
 Code-Meet is a website solely designed for Teachers and Students, to make learning fun and easy.
 
-* The editing code feature can be handled both by Teacher and students so that student can also give the input and can make the code optimal.
-* Ask a doubt in doubt section would let teacher know on which line the student has a doubt.
-
 | ![CPT2209251134-1528x742 (1)](https://user-images.githubusercontent.com/77020164/192130645-a8a279c3-8605-49af-9a1a-e29ebd9c2d5d.gif)
 |-|
 | Doubt Section |
 
-
-
-
+* The editing code feature can be handled both by Teacher and students so that student can also give the input and can make the code optimal.
+* Ask a doubt in doubt section would let teacher know on which line the student has a doubt.
 * We have designed our code collab page in such a way that its convinient for teachers as well as students to learn and ask their doubts.
 
 * Students just need to enter the Code Room Unique Id Shared by their Teachers and can get in and learn without any hindrance.
