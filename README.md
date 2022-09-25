@@ -18,7 +18,7 @@ Teachers are always making learning easier for students so that they can excel, 
 Code-Meet is a website solely designed for Teachers and Students, to make learning fun and easy.
 
 * The editing code feature can be handled both by Teacher and students so that student can also give the input and can make the code optimal.
-* Ask a doubt section would let teacher know on which line the student has a doubt.
+* Ask a doubt in doubt section would let teacher know on which line the student has a doubt.
 
 | ![CPT2209251134-1528x742 (1)](https://user-images.githubusercontent.com/77020164/192130645-a8a279c3-8605-49af-9a1a-e29ebd9c2d5d.gif)
 |-|
@@ -36,23 +36,17 @@ Code-Meet is a website solely designed for Teachers and Students, to make learni
 ## How we built it 🚧
 
 - We used ReactJS for the website.
-- We used Firebase Cloud Messaging(FCM) for the push notification. When someone visits our website, we ask them to allow the notification which gives us the token of there browser which helps FCM server to send the notification to the browser. We first register service-worker in the user's browser so that it can listen to the notification and trigger push notification in the user's browser. 
+- We use CodeMirror library to integrate the code editor.
+- We use socket.io for real-time changes in a room.
+- We use Express.js to build our backend server.
 - We used Figma to make the designs for the website.
-- We used GitHub-Pages for the deployement.
+- We used heroku for the deployement.
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-### Push Notifications
-
-| ![Screenshot_from_2022-09-18_10-21-26](https://user-images.githubusercontent.com/77020164/190886697-db605531-520e-49fa-8f01-70a1f50a5f47.png) | ![Screenshot_from_2022-09-18_10-24-45](https://user-images.githubusercontent.com/77020164/190886576-ca31f1ad-25a0-4eae-acae-20e7fa27be2b.png) 
-|-|-|
-| Notifications | Firebase |
-
-![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
 
 ## Challenges we ran into 🩹
-We had a problem hosting the project on GitHub pages and adding configuration to register the service worker to the user's browser, It was built using react+firebase and that made it somewhat tricky to host it on pages. However, we fixed all the issues and hosted them on GitHub.
+
+We had a problem while connecting users into socket, after carefully understanding from the documentation we were able to accomplish the task.
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -63,12 +57,6 @@ We have a team of  **50%  first-time hackers** and each of them tried their best
 - [Merged PR's](https://github.com/vedant-jain03/code_bode/pulls?q=is%3Apr++)
 - [Issue Solved](https://github.com/vedant-jain03/code_bode/issues?q=is%3Aissue+)
 - [Commit History](https://github.com/vedant-jain03/code_bode/commits/master)
-
-![Screenshot from 2022-09-24 18-40-04](https://user-images.githubusercontent.com/77020164/192099858-9a523374-9daf-49f8-ae26-e4ff4ec21e26.png) | ![Screenshot from 2022-09-20 19-34-49](https://user-images.githubusercontent.com/77020164/192099831-e6709370-7603-4739-8b9d-1444b9485b24.png) | 
-|-|-|
-| Issues | Pull Requests |
-| ![Screenshot from 2022-09-17 23-30-25](https://user-images.githubusercontent.com/77020164/190870410-35f32531-27aa-4756-b149-b4175e4a33cc.png) | ![Screenshot from 2022-09-18 10-59-11](https://user-images.githubusercontent.com/77020164/190887260-6845871e-0d99-4beb-a259-38d5f75a0734.png) |
-| GitHub Pages | Contribution Graph |
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
