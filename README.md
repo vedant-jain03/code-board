@@ -92,6 +92,8 @@ We are using GitHub for the following reasons:
 - Using lables: We have team of frontend, backend, content-writer, UI, we have used label in the issues for the respective work.
 - Using PRs and Issues: We are doing multiple PRs and building multiple issues to keep on track of the project.
 
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## TechStack 🧑‍💻
 
 - **Frontend:** ReactJs, SocketIO
