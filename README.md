@@ -20,7 +20,10 @@ Code-Meet is a website solely designed for Teachers and Students, to make learni
 * The editing code feature can be handled both by Teacher and students so that student can also give the input and can make the code optimal.
 * Ask a doubt section would let teacher know on which line the student has a doubt.
 
-![Screenshot from 2022-09-25 11-20-55](https://user-images.githubusercontent.com/77020164/192130327-bdc398bd-b03b-4422-ad25-85769184b6e7.png)
+| ![CPT2209251134-1528x742 (1)](https://user-images.githubusercontent.com/77020164/192130645-a8a279c3-8605-49af-9a1a-e29ebd9c2d5d.gif)
+|-|
+| Doubt Section |
+
 
 
 
