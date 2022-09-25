@@ -148,16 +148,47 @@ margin-right: 7px;
   top: 15%;
   border-radius: 50%;
   background: #96CEB4;
+  animation: cl1 2s linear infinite;
+}
+
+@keyframes cl1 {
+  0% {
+      top: 15%;
+  }
+
+  50% {
+      left: 20%;
+      top: 13%;
+  }
+
+  100% {
+      top: 15%;
+  }
 }
 
 .circle-l-2 {
   position: absolute;
   width: 44px;
   height: 44px;
-  left: 10%;
+  left: 4%;
   top: 30%;
   border-radius: 50%;
   background: rgba(47, 58, 143, 0.78);
+  animation: cl2 2s linear infinite;
+}
+
+@keyframes cl2 {
+  0% {
+      top: 30%;
+  }
+
+  50% {
+      top: 32%;
+  }
+
+  100% {
+      top: 30%;
+  }
 }
 
 .circle-l-3 {
@@ -165,9 +196,24 @@ margin-right: 7px;
   width: 39px;
   height: 39px;
   left: 20%;
-  top: 50%;
+  top: 60%;
   border-radius: 50%;
   background: #FFBC80;
+  animation: cl3 2s linear infinite;
+}
+
+@keyframes cl3 {
+  0% {
+      top: 60%;
+  }
+
+  50% {
+      top: 58%;
+  }
+
+  100% {
+      top: 60%;
+  }
 }
 
 .circle-l-4 {
@@ -175,21 +221,50 @@ margin-right: 7px;
   width: 71px;
   height: 71px;
   left: -5px;
-  top: 60%;
+  top: 70%;
   border-radius: 50%;
   background: #96CEB4;
+  animation: cl4 2s linear infinite;
+}
+
+@keyframes cl4 {
+  0% {
+      top: 70%;
+  }
+
+  50% {
+      top: 68%;
+  }
+
+  100% {
+      top: 70%;
+  }
 }
 
 .circle-l-5 {
   position: absolute;
   width: 45px;
   height: 45px;
-  left: 15%;
+  left: 25%;
   bottom: 5%;
   border-radius: 50%;
   background: #FFFDA2;
+  animation: cl5 2s linear infinite;
 }
 
+@keyframes cl5 {
+  0% {
+    bottom: 5%;
+  }
+
+  50% {
+    bottom: 7%;
+  }
+
+  100% {
+    bottom: 5%;
+  }
+}
 .circle-r-1 {
   position: absolute;
   width: 53px;
@@ -198,8 +273,21 @@ margin-right: 7px;
   top: 10%;
   border-radius: 50%;
   background: #FFFDA2;
+  animation: cr1 2s linear infinite;
 }
+@keyframes cr1 {
+  0% {
+    top: 10%;
+  }
 
+  50% {
+    top: 12%;
+  }
+
+  100% {
+    top: 10%;
+  }
+}
 .circle-r-2 {
   position: absolute;
   width: 16px;
@@ -208,28 +296,67 @@ margin-right: 7px;
   top: 25%;
   border-radius: 50%;
   background: #FFBC80;
+  animation: cr2 2s linear infinite;
 }
+@keyframes cr2 {
+  0% {
+    top: 25%;
+  }
 
+  50% {
+    top: 28%;
+  }
+
+  100% {
+    top: 25%;
+  }
+}
 .circle-r-3 {
   position: absolute;
   width: 46px;
   height: 46px;
-  right: 15%;
+  right: 20%;
   top: 45%;
   border-radius: 50%;
   background: #96CEB4;
+  animation: cr3 2s linear infinite;
 }
+@keyframes cr3 {
+  0% {
+    top: 45%;
+  }
 
+  50% {
+    top: 42%;
+  }
+
+  100% {
+    top: 45%;
+  }
+}
 .circle-r-4 {
   position: absolute;
   width: 29px;
   height: 29px;
-  right: 25%;
+  right: 5%;
   top: 65%;
   border-radius: 50%;
   background: rgba(47, 58, 143, 0.78);
+  animation: cr4 2s linear infinite;
 }
+@keyframes cr4 {
+  0% {
+    top: 65%;
+  }
 
+  50% {
+    top: 63%;
+  }
+
+  100% {
+    top: 65%;
+  }
+}
 .circle-r-5 {
   position: absolute;
   width: 20px;
@@ -238,8 +365,21 @@ margin-right: 7px;
   top: 85%;
   border-radius: 50%;
   background: #FFFDA2;
+  animation: cr5 2s linear infinite;
 }
+@keyframes cr5 {
+  0% {
+    top: 85%;
+  }
 
+  50% {
+    top: 87%;
+  }
+
+  100% {
+    top: 85%;
+  }
+}
 .prop-image {
   position: absolute;
 }
@@ -252,12 +392,12 @@ margin-right: 7px;
 
 .prop2 {
   top: 40%;
-  left: 5%;
+  left: 10%;
   width: 120px;
 }
 
 .prop3 {
-  top: 75%;
+  top: 80%;
   left: 5%;
   width: 100px;
 }

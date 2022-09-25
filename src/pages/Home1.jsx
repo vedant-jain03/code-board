@@ -83,9 +83,9 @@ const Home1 = () => {
                     cursor: "pointer",
                 }
             } onClick={toggleDarkMode} />}
-            <img src={prop1} alt="" className='prop-image prop1'/>
-            <img src={prop2} alt="" className='prop-image prop2'/>
-            <img src={prop3} alt="" className='prop-image prop3'/>
+            <img src={prop2} alt="" className='prop-image prop1'/>
+            <img src={prop3} alt="" className='prop-image prop2'/>
+            <img src={prop1} alt="" className='prop-image prop3'/>
             <img src={prop4} alt="" className='prop-image prop4'/>
             <img src={prop5} alt="" className='prop-image prop5'/>
             <div className="circle-l-1"></div>
