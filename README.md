@@ -88,8 +88,9 @@ We are using GitHub for the following reasons:
 ## TechStack 🧑‍💻
 
 - **Frontend:** ReactJs, SocketIO
+- **Backend:** Express
 - **Version Control:** Git and GitHub
-- **Hosting:** GitHub Pages
+- **Hosting:** Heroku
 - **Code Editor and tools**: VS Code
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
