@@ -1,10 +1,10 @@
 <h1 align="center"> 
   
- ✨ Welcome to Code-Meet ✨ 
-
-![3767561](https://user-images.githubusercontent.com/77020164/192100862-e4813af6-2eac-4fb1-8c3c-7671fdddc3fd.png)
-  
+ ✨ Welcome to CodeBoard ✨ 
+ 
  </h1>
+ 
+![CPT2209251107-1510x709 (1)](https://user-images.githubusercontent.com/77020164/192130108-faf3c1e2-2d4b-4e4a-aec1-f9258375d420.gif)
 
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -20,12 +20,13 @@ Code-Meet is a website solely designed for Teachers and Students, to make learni
 * The editing code feature can be handled both by Teacher and students so that student can also give the input and can make the code optimal.
 * Ask a doubt section would let teacher know on which line the student has a doubt.
 
-![unknown (4)](https://user-images.githubusercontent.com/77020164/192100448-fbc5aba6-1ccf-400f-ac14-71e7514821bf.png)
+![Screenshot from 2022-09-25 11-20-55](https://user-images.githubusercontent.com/77020164/192130327-bdc398bd-b03b-4422-ad25-85769184b6e7.png)
 
 
-We have designed our code collab page in such a way that its convinient for teachers as well as students to learn and ask their doubts.
 
-Students just need to enter the Code Room Unique Id Shared by their Teachers and can get in and learn without any hindrance.
+* We have designed our code collab page in such a way that its convinient for teachers as well as students to learn and ask their doubts.
+
+* Students just need to enter the Code Room Unique Id Shared by their Teachers and can get in and learn without any hindrance.
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -40,7 +41,7 @@ Students just need to enter the Code Room Unique Id Shared by their Teachers and
 
 ### Push Notifications
 
-|  ![Screenshot_from_2022-09-18_10-21-26](https://user-images.githubusercontent.com/77020164/190886697-db605531-520e-49fa-8f01-70a1f50a5f47.png) | ![Screenshot_from_2022-09-18_10-24-45](https://user-images.githubusercontent.com/77020164/190886576-ca31f1ad-25a0-4eae-acae-20e7fa27be2b.png) 
+| ![Screenshot_from_2022-09-18_10-21-26](https://user-images.githubusercontent.com/77020164/190886697-db605531-520e-49fa-8f01-70a1f50a5f47.png) | ![Screenshot_from_2022-09-18_10-24-45](https://user-images.githubusercontent.com/77020164/190886576-ca31f1ad-25a0-4eae-acae-20e7fa27be2b.png) 
 |-|-|
 | Notifications | Firebase |
 
@@ -81,8 +82,7 @@ We learned to team management, and each and everyone was assigned a task that th
 
 
 ## UI of the project  😎
-
-| ![unknown (6)](https://user-images.githubusercontent.com/77020164/192099618-2d76ec8f-46c0-4d4b-ae37-da1288a87a24.png) | ![unknown (5)](https://user-images.githubusercontent.com/77020164/192099625-91464871-0d02-4615-9f92-08f335ae7339.png) | ![unknown (4)](https://user-images.githubusercontent.com/77020164/192099633-b720c4c3-342f-4504-affd-fb2d11a9eac9.png)
+|![Screenshot from 2022-09-25 11-23-58](https://user-images.githubusercontent.com/77020164/192130399-19e796bd-b75a-4dd5-a1c5-0598ef22610b.png) | ![Screenshot from 2022-09-25 11-23-51](https://user-images.githubusercontent.com/77020164/192130404-b90e2a1e-443e-4a78-9f92-478d40541111.png) | ![Screenshot from 2022-09-25 11-20-55](https://user-images.githubusercontent.com/77020164/192130405-d0dc49e1-80ed-482d-aa68-3062b7fa8ea4.png)
 |-|-|-|
 | DarkMode  | Light Mode | Code Collab Page|
 
