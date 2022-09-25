@@ -15,7 +15,7 @@ Teachers are always making learning easier for students so that they can excel, 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## What it does ⛳
-Code-Meet is a website solely designed for Teachers and Students, to make learning fun and easy.
+CodeBoard is a website solely designed for Teachers and Students, to make learning fun and easy.
 
 | ![CPT2209251134-1528x742 (1)](https://user-images.githubusercontent.com/77020164/192130645-a8a279c3-8605-49af-9a1a-e29ebd9c2d5d.gif)
 |-|
@@ -54,7 +54,8 @@ We have a team of  **50%  first-time hackers** and each of them tried their best
 
 - [Merged PR's](https://github.com/vedant-jain03/code_bode/pulls?q=is%3Apr++)
 - [Issue Solved](https://github.com/vedant-jain03/code_bode/issues?q=is%3Aissue+)
-- [Commit History](https://github.com/vedant-jain03/code_bode/commits/master)
+- [Commit History](htt
+- ps://github.com/vedant-jain03/code_bode/commits/master)
 
 |![Screenshot from 2022-09-25 13-24-44](https://user-images.githubusercontent.com/76901313/192133972-5d202b01-0d54-4a59-9cbe-61d436b1f578.png)| ![Screenshot from 2022-09-25 13-24-15](https://user-images.githubusercontent.com/76901313/192133974-51a6848f-afd4-407c-a9c8-159a6ec93d24.png)
 |-|-|
@@ -70,7 +71,7 @@ We learned to team management, and each and everyone was assigned a task that th
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## What's next for Code-Meet 🧑‍💻
+## What's next for CodeBoard 🧑‍💻
 * Adding Test Cases features with quick compilation so that a Teacher can add test cases and can better judge student's code.
 * TImer with different themes of editors, making coding fun for everyone.
 
