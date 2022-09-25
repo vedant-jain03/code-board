@@ -85,12 +85,21 @@ We learned to team management, and each and everyone was assigned a task that th
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
-## Most Creative Use of GitHub
+## Most Creative Use of GitHub ✨ 
 We are using GitHub for the following reasons:
 
 - Collaboration: GitHub makes it easy to share code with others and helps a lot in collaboration.
 - Using lables: We have team of frontend, backend, content-writer, UI, we have used label in the issues for the respective work.
 - Using PRs and Issues: We are doing multiple PRs and building multiple issues to keep on track of the project.
+
+
+## Best Domain Name from GoDaddy Registry [APAC Only] ✨ 
+
+* Domain Name We choose is http://not-a-fish-market-anymore.
+
+![Screenshot from 2022-09-25 16-02-23](https://user-images.githubusercontent.com/77020164/192139195-b587f3aa-bc40-463a-8b18-754f8b8c6f64.png)
+
+
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
