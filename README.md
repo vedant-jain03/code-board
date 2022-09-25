@@ -93,9 +93,12 @@ We are using GitHub for the following reasons:
 - Using PRs and Issues: We are doing multiple PRs and building multiple issues to keep on track of the project.
 
 
+![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
 ## Best Domain Name from GoDaddy Registry [APAC Only] ✨ 
 
-* Domain Name We choose is http://not-a-fish-market-anymore.
+* Domain Name We choose is http://not-a-fish-market-anymore.us/
 
 ![Screenshot from 2022-09-25 16-02-23](https://user-images.githubusercontent.com/77020164/192139195-b587f3aa-bc40-463a-8b18-754f8b8c6f64.png)
 
