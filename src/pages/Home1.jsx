@@ -27,6 +27,7 @@ const Home1 = () => {
     const navigate = useNavigate();
     const [id, setid] = useState("");
     const [username, setusername] = useState("");
+    const [className, setClassName] = useState("")
     const createNewRoom = (e) => {
         e.preventDefault();
         const newid = uuidv4();

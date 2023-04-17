@@ -9,7 +9,7 @@ import 'codemirror/addon/edit/closebrackets'
 import 'codemirror/lib/codemirror.css'
 import ACTIONS from '../Action';
 
-function Editor({ socketRef, id }) {
+function Editor({ socketRef, id, setLiveCode }) {
   const editorRef = useRef(null);
   useEffect(() => {
     async function init() {
@@ -25,9 +25,9 @@ function Editor({ socketRef, id }) {
         gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
       });
       editorRef.current.on('change', (instance, changes) => {
-        console.log(changes);
         const { origin } = changes;
         const code = instance.getValue();
+        setLiveCode(code)
         if (origin !== 'setValue') {
           socketRef.current.emit(ACTIONS.CODE_CHANGE, {
             id,
@@ -43,6 +43,7 @@ function Editor({ socketRef, id }) {
       socketRef.current.on(ACTIONS.SYNC_CODE, ({ code }) => {
         if (code !== null) {
           editorRef.current.setValue(code);
+          setLiveCode(code);
         }
       })
     }

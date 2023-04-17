@@ -15,12 +15,12 @@ function EditorPage() {
   const [isChatShown, setChatShown] = useState(false);
   const [doubt, setDoubt] = useState("");
   const [allDoubts, setAllDoubts] = useState({});
+  const [liveCode, setLiveCode] = useState("");
   const handleChat = (e) => {
     e.preventDefault();
     setChatShown(true);
   }
   const { id } = useParams();
-  console.log(id)
   const socketRef = useRef(null);
   useEffect(() => {
     const init = async () => {
@@ -38,7 +38,6 @@ function EditorPage() {
 
       // Listening for doubt event
       socketRef.current.on(ACTIONS.DOUBT, ({ doubts, username, socketId }) => {
-        console.log(doubts);
         setAllDoubts(doubts);
         toast.success(`${username} asked a doubt!`)
       })
@@ -91,6 +90,14 @@ function EditorPage() {
     navigate('/');
     toast.success('You leaved the Room');
   }
+  const downloadTxtFile = () => {
+    const element = document.createElement("a");
+    const file = new Blob([liveCode], {type: 'text/plain'});
+    element.href = URL.createObjectURL(file);
+    element.download = "example.txt";
+    document.body.appendChild(element);
+    element.click();
+  };
   return (
     <div className='mainWrap'>
       <div className="aside">
@@ -113,8 +120,9 @@ function EditorPage() {
         <button className='btn leaveBtn' onClick={leaveRoom} >Leave</button>
       </div>
       <div className="editorWrap">
-        <Editor socketRef={socketRef} id={id} />
+        <Editor socketRef={socketRef} id={id} setLiveCode={setLiveCode} />
       </div>
+      <button className='btn doubtBtn' style={{right: '140px'}} onClick={downloadTxtFile}>Download Code</button>
       <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
       {isChatShown && <DoubtSection status={setChatShown} setDoubt={setDoubt} doubt={doubt} askDoubt={askDoubt} allDoubts={allDoubts} />}
     </div>
