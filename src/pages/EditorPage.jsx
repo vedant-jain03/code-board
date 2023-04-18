@@ -9,10 +9,13 @@ import toast from 'react-hot-toast';
 import logo from "../logo.webp"
 import DoubtSection from '../components/DoubtSection';
 import bglogo from "../images/bglogo.png"
+import { AiOutlineMenu } from 'react-icons/ai'
+
 function EditorPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isChatShown, setChatShown] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
   const [doubt, setDoubt] = useState("");
   const [allDoubts, setAllDoubts] = useState({});
   const [liveCode, setLiveCode] = useState("");
@@ -92,17 +95,18 @@ function EditorPage() {
   }
   const downloadTxtFile = () => {
     const element = document.createElement("a");
-    const file = new Blob([liveCode], {type: 'text/plain'});
+    const file = new Blob([liveCode], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
     element.download = "example.txt";
     document.body.appendChild(element);
     element.click();
   };
   return (
-    <div className='mainWrap'>
-      <div className="aside">
+    <div className='mainWrap' style={{ gridTemplateColumns: menuOpen ? '230px 1fr' : '0 1fr' }}>
+      <div className="aside" style={{position: 'relative'}}>
+        <div className='menu-options' style={{left: menuOpen ? '230px' : '0px' }} onClick={() => setMenuOpen(!menuOpen)}><AiOutlineMenu /></div>
         <div className="asideInner">
-          <div className="logo"><h2 className='logo_design'><img src={bglogo} alt="" style={{width:'220px'}} /></h2></div>
+          <div className="logo"><h2 className='logo_design'><img src={bglogo} alt="" style={{ width: '220px' }} /></h2></div>
           <h3>Teacher</h3>
           <div className="clientsList">
             {
@@ -122,7 +126,7 @@ function EditorPage() {
       <div className="editorWrap">
         <Editor socketRef={socketRef} id={id} setLiveCode={setLiveCode} />
       </div>
-      <button className='btn doubtBtn' style={{right: '140px'}} onClick={downloadTxtFile}>Download Code</button>
+      <button className='btn doubtBtn' style={{ right: '140px' }} onClick={downloadTxtFile}>Download Code</button>
       <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
       {isChatShown && <DoubtSection status={setChatShown} setDoubt={setDoubt} doubt={doubt} askDoubt={askDoubt} allDoubts={allDoubts} />}
     </div>
