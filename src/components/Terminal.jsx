@@ -9,8 +9,7 @@ function Terminal({ output, terminal, setEditorOpen, setInput, input }) {
             <hr />
             <h3>Output</h3>
             {
-                terminal ?  <textarea value={output} readOnly="true" className='terminalOutput'></textarea>
-                : "Loading..."
+                 <textarea value={output} readOnly="true" className='terminalOutput'></textarea>
             }
         </div>
     )
