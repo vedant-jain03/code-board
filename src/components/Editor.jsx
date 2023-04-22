@@ -9,6 +9,7 @@ import 'codemirror/addon/edit/closebrackets'
 import 'codemirror/lib/codemirror.css'
 import ACTIONS from '../Action';
 import { useLocation } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 function Editor({ socketRef, id, setLiveCode, editorRef }) {
   // const editorRef = useRef(null);
@@ -50,6 +51,7 @@ function Editor({ socketRef, id, setLiveCode, editorRef }) {
         }
       })
       socketRef.current.on('access_change', ({ access }) => {
+        toast.success(`Editor is ${access ? 'lock' : 'unlock'}`)
         editorRef.current.setOption('readOnly', access);
       })
     }

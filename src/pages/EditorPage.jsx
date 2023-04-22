@@ -10,6 +10,8 @@ import logo from "../logo.webp"
 import DoubtSection from '../components/DoubtSection';
 import bglogo from "../images/bglogo.png"
 import { AiOutlineMenu } from 'react-icons/ai'
+import axios from 'axios';
+import Terminal from '../components/Terminal';
 
 function EditorPage() {
   const editorRef = useRef(null);
@@ -22,6 +24,11 @@ function EditorPage() {
   const [liveCode, setLiveCode] = useState("");
   const [clients, setclients] = useState([]);
   const [access, setAccess] = useState(false);
+  const [terminal, setTerminal] = useState(false);
+  const [output, setOutput] = useState("");
+  const [editorOpen, setEditorOpen] = useState(true);
+  const [input, setInput] = useState("");
+  const [langCode, setLangCode] = useState("52");
   const handleChat = (e) => {
     e.preventDefault();
     setChatShown(true);
@@ -42,9 +49,6 @@ function EditorPage() {
         id,
         username: location.state.username
       });
-      socketRef.current.on('user-joined', ({socketId, username}) => {
-        console.log(socketId, username);
-      })
       // Listening for doubt event
       socketRef.current.on(ACTIONS.DOUBT, ({ doubts, username, socketId }) => {
         setAllDoubts(doubts);
@@ -55,12 +59,6 @@ function EditorPage() {
         setclients(clients);
         if (username !== location.state.username) {
           toast.success(`${username} joined the room.`)
-        }
-        if(clients.length !== 0 && clients[0].username === location.state.username) {
-          console.log("Teacher")
-        }
-        else {
-          console.log("Studemt")
         }
       })
 
@@ -93,7 +91,8 @@ function EditorPage() {
       toast.error(err);
     }
   }
-  async function askDoubt() {
+  async function askDoubt(e) {
+    e.preventDefault();
     socketRef.current.emit(ACTIONS.DOUBT, {
       id,
       username: location.state.username,
@@ -112,18 +111,68 @@ function EditorPage() {
     navigate('/');
     toast.success('You leaved the Room');
   }
-  const downloadTxtFile = () => {
+  const downloadTxtFile = async () => {
     const element = document.createElement("a");
     const file = new Blob([liveCode], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
-    element.download = "example.txt";
+    const options = {
+      method: 'GET',
+      url: `https://judge0-ce.p.rapidapi.com/languages/${langCode}`,
+      headers: {
+        'X-RapidAPI-Key': '3674cb3781msh924be95b1e1b984p11b41fjsn96100b1e671b',
+        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+      }
+    };
+    
+    const res = (await axios.request(options)).data;
+    element.download = res.source_file;
     document.body.appendChild(element);
     element.click();
   };
+  const runCode = async () => {
+    setTerminal(false);
+    setEditorOpen(true);
+    setOutput("")
+    if(liveCode === "") {
+      setOutput("Null output not allowed");
+      setTerminal(true);
+      return;
+    }
+    const encodedCode = btoa(liveCode);
+    const inputNecode = btoa(input);
+    const optionsPost = {
+      method: 'POST',
+      url: 'https://judge0-ce.p.rapidapi.com/submissions',
+      params: {base64_encoded: 'true', fields: '*'},
+      headers: {
+        'content-type': 'application/json',
+        'Content-Type': 'application/json',
+        'X-RapidAPI-Key': '3674cb3781msh924be95b1e1b984p11b41fjsn96100b1e671b',
+        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+      },
+      data: `{"language_id":${Number(langCode)},"source_code":"${encodedCode}","stdin":"${inputNecode}"}`
+    };
+    const resPost = await axios.request(optionsPost);
+    const optionsGet = {
+      method: 'GET',
+      url: `https://judge0-ce.p.rapidapi.com/submissions/${resPost.data.token}`,
+      params: { base64_encoded: 'true', fields: '*' },
+      headers: {
+        'X-RapidAPI-Key': '3674cb3781msh924be95b1e1b984p11b41fjsn96100b1e671b',
+        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+      }
+    };
+    const res = (await axios.request(optionsGet)).data;
+    const output = (atob(res.stdout));
+    console.log(output);
+    if(res.stdout === null) setOutput(res.status.description)
+    else setOutput(atob(res.stdout));
+    setTerminal(true);
+  }
   return (
-    <div className='mainWrap' style={{ gridTemplateColumns: menuOpen ? '230px 1fr' : '0 1fr' }}>
-      <div className="aside" style={{position: 'relative'}}>
-        <div className='menu-options' style={{left: menuOpen ? '230px' : '0px' }} onClick={() => setMenuOpen(!menuOpen)}><AiOutlineMenu /></div>
+    <div className='mainWrap' style={{ gridTemplateColumns: menuOpen ? `${editorOpen ? '230px 1fr 0.4fr' : '230px 1fr'}` : `${editorOpen ? '0 1fr 0.4fr' : '0 1fr'}` }}>
+      <div className="aside" style={{ position: 'relative' }}>
+        <div className='menu-options' style={{ left: menuOpen ? '230px' : '0px' }} onClick={() => setMenuOpen(!menuOpen)}><AiOutlineMenu /></div>
         <div className="asideInner">
           <div className="logo"><h2 className='logo_design'><img src={bglogo} alt="" style={{ width: '220px' }} /></h2></div>
           <h3>Teacher</h3>
@@ -139,12 +188,24 @@ function EditorPage() {
             }
           </div>
         </div>
+        {
+          <select name="" className='btn copyBtn' value={langCode} onChange={(e) => setLangCode(e.target.value)} style={{marginBottom:'10px', outline: 'none'}}>
+            <option value="52">C++</option>
+            <option value="49">C</option>
+            <option value="63">Javascript</option>
+            <option value="92">Python</option>
+          </select>
+        }
         <button className='btn copyBtn' onClick={copyRoomId} >Copy ROOM ID</button>
         <button className='btn leaveBtn' onClick={leaveRoom} >Leave</button>
       </div>
       <div className="editorWrap">
         <Editor socketRef={socketRef} id={id} setLiveCode={setLiveCode} access={access} editorRef={editorRef} />
       </div>
+      <div className='terminal'>
+       {editorOpen && <Terminal output={output} terminal={terminal} setEditorOpen={setEditorOpen} setInput={setInput} input={input} />}
+      </div>
+      <button className='btn doubtBtn' style={{ right: '445px' }} onClick={() => runCode()} >Run Code</button>
       {
         (clients.length !== 0 && clients[0].username === location.state.username && <button className='btn doubtBtn' style={{ right: '300px' }} onClick={lockAccess} >{access ? 'Lock' : 'Unlock'} Editor</button>)
       }

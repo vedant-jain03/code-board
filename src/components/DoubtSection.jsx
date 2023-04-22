@@ -13,9 +13,9 @@ function DoubtSection({ status, setDoubt, doubt, askDoubt, allDoubts }) {
                     Object.keys(allDoubts).length > 0 && Object.keys(allDoubts).map((key, index)=>(<Doubt username={key} doubttext={allDoubts[key]} />))
                 }
             </div>
-            <form onSubmit={askDoubt} className="ask_doubt_wrapper">
+            <form onSubmit={(e) => askDoubt(e)} className="ask_doubt_wrapper">
                 <input type="text" value={doubt} onChange={(e)=>setDoubt(e.target.value)} />
-                <button type='submit' className='btn' onClick={askDoubt}>send</button>
+                <button type='submit' className='btn' onClick={(e) => askDoubt(e)}>send</button>
             </form>
         </div>
     )
