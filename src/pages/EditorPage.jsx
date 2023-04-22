@@ -19,6 +19,8 @@ function EditorPage() {
   const [doubt, setDoubt] = useState("");
   const [allDoubts, setAllDoubts] = useState({});
   const [liveCode, setLiveCode] = useState("");
+  const [clients, setclients] = useState([]);
+  const [access, setAccess] = useState(false);
   const handleChat = (e) => {
     e.preventDefault();
     setChatShown(true);
@@ -38,7 +40,9 @@ function EditorPage() {
         id,
         username: location.state.username
       });
-
+      socketRef.current.on('user-joined', ({socketId, username}) => {
+        console.log(socketId, username);
+      })
       // Listening for doubt event
       socketRef.current.on(ACTIONS.DOUBT, ({ doubts, username, socketId }) => {
         setAllDoubts(doubts);
@@ -49,6 +53,12 @@ function EditorPage() {
         setclients(clients);
         if (username !== location.state.username) {
           toast.success(`${username} joined the room.`)
+        }
+        if(clients.length !== 0 && clients[0].username === location.state.username) {
+          console.log("Teacher")
+        }
+        else {
+          console.log("Studemt")
         }
       })
 
@@ -69,7 +79,6 @@ function EditorPage() {
       socketRef.current.off(ACTIONS.DISCONNECTED);
     }
   }, [])
-  const [clients, setclients] = useState([]);
   if (!location.state) {
     return <Navigate to="/" />
   }
@@ -88,6 +97,12 @@ function EditorPage() {
       doubt
     })
     setDoubt("");
+  }
+  async function lockAccess() {
+    setAccess(!access);
+    socketRef.current.emit('lock_access', {
+      access
+    })
   }
   function leaveRoom() {
     navigate('/');
@@ -124,8 +139,11 @@ function EditorPage() {
         <button className='btn leaveBtn' onClick={leaveRoom} >Leave</button>
       </div>
       <div className="editorWrap">
-        <Editor socketRef={socketRef} id={id} setLiveCode={setLiveCode} />
+        <Editor socketRef={socketRef} id={id} setLiveCode={setLiveCode} access={access} />
       </div>
+      {
+        (clients.length !== 0 && clients[0].username === location.state.username && <button className='btn doubtBtn' style={{ right: '300px' }} onClick={lockAccess} >Lock Editor</button>)
+      }
       <button className='btn doubtBtn' style={{ right: '140px' }} onClick={downloadTxtFile}>Download Code</button>
       <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
       {isChatShown && <DoubtSection status={setChatShown} setDoubt={setDoubt} doubt={doubt} askDoubt={askDoubt} allDoubts={allDoubts} />}

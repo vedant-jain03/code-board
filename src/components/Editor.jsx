@@ -9,7 +9,7 @@ import 'codemirror/addon/edit/closebrackets'
 import 'codemirror/lib/codemirror.css'
 import ACTIONS from '../Action';
 
-function Editor({ socketRef, id, setLiveCode }) {
+function Editor({ socketRef, id, setLiveCode, access }) {
   const editorRef = useRef(null);
   useEffect(() => {
     async function init() {
@@ -22,7 +22,8 @@ function Editor({ socketRef, id, setLiveCode }) {
         lineWrapping: true,
         extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
         foldGutter: true,
-        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        readOnly: access
       });
       editorRef.current.on('change', (instance, changes) => {
         const { origin } = changes;
@@ -52,7 +53,7 @@ function Editor({ socketRef, id, setLiveCode }) {
     }
   }, [socketRef.current])
   return (
-    <textarea id='realtime'>
+    <textarea id='realtime' disabled="true">
 
     </textarea>
   )
