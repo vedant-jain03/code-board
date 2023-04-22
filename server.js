@@ -29,6 +29,11 @@ io.on('connection', (socket)=>{
     socket.on(ACTIONS.JOIN, ({id, username})=> {
         userSocketMap[socket.id] = username;
         socket.join(id);
+        socket.emit('user-joined', {
+            socketId: socket.id,
+            username: username
+        })
+        console.log(socket.id, username);
         const clients = getAllConnectedClients(id);
         clients.forEach(( {socketId} )=>{
             io.to(socketId).emit(ACTIONS.JOINED, {
@@ -38,6 +43,15 @@ io.on('connection', (socket)=>{
             });
         })
     });
+    socket.on('lock_access', ({id, access}) => {
+        console.log(access);
+        const clients = getAllConnectedClients(id);
+        clients.forEach(({socketId}) => {
+            io.to(socketId).emit('access_change', {
+                access
+            })
+        })
+    })
     socket.on(ACTIONS.DOUBT, ({id, username, doubt}) => {
         doubts[username] = doubt;
         console.log(doubts);
