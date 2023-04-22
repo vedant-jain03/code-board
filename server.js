@@ -43,6 +43,15 @@ io.on('connection', (socket)=>{
             });
         })
     });
+    socket.on('lock_access', ({id, access}) => {
+        console.log(access);
+        const clients = getAllConnectedClients(id);
+        clients.forEach(({socketId}) => {
+            io.to(socketId).emit('access_change', {
+                access
+            })
+        })
+    })
     socket.on(ACTIONS.DOUBT, ({id, username, doubt}) => {
         doubts[username] = doubt;
         console.log(doubts);

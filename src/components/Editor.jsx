@@ -1,6 +1,6 @@
 
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/theme/material.css'
@@ -8,9 +8,11 @@ import 'codemirror/addon/edit/closetag'
 import 'codemirror/addon/edit/closebrackets'
 import 'codemirror/lib/codemirror.css'
 import ACTIONS from '../Action';
+import { useLocation } from 'react-router-dom';
 
-function Editor({ socketRef, id, setLiveCode, access }) {
-  const editorRef = useRef(null);
+function Editor({ socketRef, id, setLiveCode, editorRef }) {
+  // const editorRef = useRef(null);
+  const location = useLocation();
   useEffect(() => {
     async function init() {
       editorRef.current = CodeMirror.fromTextArea(document.getElementById('realtime'), {
@@ -22,9 +24,9 @@ function Editor({ socketRef, id, setLiveCode, access }) {
         lineWrapping: true,
         extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
         foldGutter: true,
-        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
-        readOnly: access
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
       });
+
       editorRef.current.on('change', (instance, changes) => {
         const { origin } = changes;
         const code = instance.getValue();
@@ -46,6 +48,9 @@ function Editor({ socketRef, id, setLiveCode, access }) {
           editorRef.current.setValue(code);
           setLiveCode(code);
         }
+      })
+      socketRef.current.on('access_change', ({ access }) => {
+        editorRef.current.setOption('readOnly', access);
       })
     }
     return () => {

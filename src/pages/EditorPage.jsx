@@ -12,6 +12,7 @@ import bglogo from "../images/bglogo.png"
 import { AiOutlineMenu } from 'react-icons/ai'
 
 function EditorPage() {
+  const editorRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
   const [isChatShown, setChatShown] = useState(false);
@@ -25,6 +26,7 @@ function EditorPage() {
     e.preventDefault();
     setChatShown(true);
   }
+  const [isTeacher, setIsTeacher] = useState(false);
   const { id } = useParams();
   const socketRef = useRef(null);
   useEffect(() => {
@@ -73,6 +75,7 @@ function EditorPage() {
       })
     };
     init();
+    editorRef.current.setOption('readOnly', false)
     return () => {
       socketRef.current.disconnect();
       socketRef.current.off(ACTIONS.JOINED);
@@ -99,8 +102,9 @@ function EditorPage() {
     setDoubt("");
   }
   async function lockAccess() {
-    setAccess(!access);
+    setAccess(!access)
     socketRef.current.emit('lock_access', {
+      id,
       access
     })
   }
@@ -139,7 +143,7 @@ function EditorPage() {
         <button className='btn leaveBtn' onClick={leaveRoom} >Leave</button>
       </div>
       <div className="editorWrap">
-        <Editor socketRef={socketRef} id={id} setLiveCode={setLiveCode} access={access} />
+        <Editor socketRef={socketRef} id={id} setLiveCode={setLiveCode} access={access} editorRef={editorRef} />
       </div>
       {
         (clients.length !== 0 && clients[0].username === location.state.username && <button className='btn doubtBtn' style={{ right: '300px' }} onClick={lockAccess} >Lock Editor</button>)
