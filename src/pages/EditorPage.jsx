@@ -119,7 +119,7 @@ function EditorPage() {
       method: 'GET',
       url: `https://judge0-ce.p.rapidapi.com/languages/${langCode}`,
       headers: {
-        'X-RapidAPI-Key': '15a8c31bf9mshb433147054b392ap1234d7jsnd5fc698671b1',
+        'X-RapidAPI-Key': '25e46c78edmsh3e9042729541844p14f962jsn9a39dbe92663',
         'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
       }
     };
@@ -140,6 +140,14 @@ function EditorPage() {
     }
     const encodedCode = btoa(liveCode);
     const inputNecode = btoa(input);
+    const options = {
+      method: 'GET',
+      url: 'https://judge0-ce.p.rapidapi.com/about',
+      headers: {
+        'X-RapidAPI-Key': '25e46c78edmsh3e9042729541844p14f962jsn9a39dbe92663',
+        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+      }
+    };
     const optionsPost = {
       method: 'POST',
       url: 'https://judge0-ce.p.rapidapi.com/submissions',
@@ -147,7 +155,7 @@ function EditorPage() {
       headers: {
         'content-type': 'application/json',
         'Content-Type': 'application/json',
-        'X-RapidAPI-Key': '15a8c31bf9mshb433147054b392ap1234d7jsnd5fc698671b1',
+        'X-RapidAPI-Key': '25e46c78edmsh3e9042729541844p14f962jsn9a39dbe92663',
         'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
       },
       data: `{"language_id":${Number(langCode)},"source_code":"${encodedCode}","stdin":"${inputNecode}"}`
@@ -158,7 +166,7 @@ function EditorPage() {
       url: `https://judge0-ce.p.rapidapi.com/submissions/${resPost.data.token}`,
       params: { base64_encoded: 'true', fields: '*' },
       headers: {
-        'X-RapidAPI-Key': '15a8c31bf9mshb433147054b392ap1234d7jsnd5fc698671b1',
+        'X-RapidAPI-Key': '25e46c78edmsh3e9042729541844p14f962jsn9a39dbe92663',
         'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
       }
     };
