@@ -205,10 +205,10 @@ function EditorPage() {
       <div className='terminal'>
        {editorOpen && <Terminal output={output} terminal={terminal} setEditorOpen={setEditorOpen} setInput={setInput} input={input} />}
       </div>
-      <button className='btn doubtBtn' style={{ right: '445px' }} onClick={() => runCode()} >Run Code</button>
       {
-        (clients.length !== 0 && clients[0].username === location.state.username && <button className='btn doubtBtn' style={{ right: '300px' }} onClick={lockAccess} >{access ? 'Lock' : 'Unlock'} Editor</button>)
+        (clients.length !== 0 && clients[0].username === location.state.username && <button className='btn doubtBtn' style={{ right: '415px' }} onClick={lockAccess} >{access ? 'Lock' : 'Unlock'} Editor</button>)
       }
+      <button className='btn doubtBtn' style={{ right: '300px' }} onClick={() => runCode()} >Run Code</button>
       <button className='btn doubtBtn' style={{ right: '140px' }} onClick={downloadTxtFile}>Download Code</button>
       <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
       {isChatShown && <DoubtSection status={setChatShown} setDoubt={setDoubt} doubt={doubt} askDoubt={askDoubt} allDoubts={allDoubts} />}
