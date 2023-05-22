@@ -18,4 +18,4 @@ jobs:
           node-version: 16
       
       - name: Consoling the testing
-        run: console.log("Hi, bhai kaam karlo apna, ye sirf testing chl rhi hai, khamakha dekhne ajate ho!!!")
+        run: echo "Hi, bhai kaam karlo apna, ye sirf testing chl rhi hai, khamakha dekhne ajate ho!!!"
