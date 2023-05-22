@@ -19,3 +19,6 @@ jobs:
       
       - name: Consoling the testing
         run: echo "Hi, bhai kaam karlo apna, ye sirf testing chl rhi hai, khamakha dekhne ajate ho!!!"
+      
+      - name: Let's run the script
+        run: node ./scripts/add-welcome-description-in-pr.js
