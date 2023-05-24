@@ -21,13 +21,13 @@ const addCommentToPR = async (owner, repo, PRnumber, comment) => {
   }
 }
 
-const reviewRequests = async (owner, repo, PRnumber) => {
+const reviewRequests = async (owner, repo, PRnumber, requestReviewers) => {
   try {
     const response = await octokit.pulls.requestReviewers({
       owner,
       repo,
-      issue_number: PRnumber,
-      reviewers: ['vedant-jain03', 'yashikajotwani12']
+      pull_number: PRnumber,
+      reviewers: requestReviewers
     })
     console.log("Request Reviews from maintainer")
   } catch (e) {
@@ -38,7 +38,9 @@ const reviewRequests = async (owner, repo, PRnumber) => {
 const owner = process.env.OWNER
 const repo = process.env.REPO_NAME
 const PRnumber = process.env.PR
+const reviewers = ['yashikajotwani12', 'vedant-jain03']
+const requestReviewers = reviewers.filter((user) => user != owner)
 
-const comment = "Thankyou for adding PR, this is just testing comment, so you can go now else!";
+const comment = "@yashikajotwani12. This is just me testing my GitHub Action workflows, if you are reading this, you can do your own businses now, ahahahahahahah. If you think there is need to change something, raise a PR hahahah";
 addCommentToPR(owner, repo, PRnumber, comment);
-reviewRequests(owner, repo, PRnumber)
+reviewRequests(owner, repo, PRnumber, requestReviewers)
