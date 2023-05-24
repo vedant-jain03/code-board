@@ -21,4 +21,9 @@ jobs:
         run:  npm i @octokit/rest -f  
       
       - name: Comment on the PR
-        run: node ./.github/workflows/scripts/add-welcome-description-in-pr.js "${{ github.repository_owner }}" code-board "${{ github.event.pull_request.number }}" "${{ secrets.GITHUB_TOKEN }}"
+        run: node ./.github/workflows/scripts/add-welcome-description-in-pr.js
+        env:
+          OWNER: "${{ github.repository_owner }}"
+          REPO_NAME: code-board 
+          PR: "${{ github.event.pull_request.number }}"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

@@ -1,7 +1,7 @@
 const { Octokit } = require("@octokit/rest");
 
 const octokit = new Octokit({
-  auth: process.env[5]
+  auth: process.env.GITHUB_TOKEN
 })
 
 const addCommentToPR = async (owner, repo, PRnumber, comment) => {
@@ -21,9 +21,9 @@ const addCommentToPR = async (owner, repo, PRnumber, comment) => {
   }
 }
 
-const owner = process.argv[2];
-const repo = process.argv[3];
-const PRnumber = process.argv[4];
+const owner = process.env.OWNER
+const repo = process.env.REPO_NAME
+const PRnumber = process.env.PR
 
 console.log("hurrrrrray")
 const comment = "Thankyou for adding PR, this is just testing comment, so you can go now else!";
