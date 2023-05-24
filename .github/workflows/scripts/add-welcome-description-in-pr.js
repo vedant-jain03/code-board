@@ -1,7 +1,7 @@
 const { Octokit } = require("@octokit/rest");
 
 const octokit = new Octokit({
-  auth: process.argv[5]
+  auth: "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"
 })
 
 const addCommentToPR = async (owner, repo, PRnumber, comment) => {
