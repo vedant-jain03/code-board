@@ -1,0 +1,24 @@
+name: Add description to the open PR
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  add-comment-to-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: Consoling the testing
+        run: echo "Hi, bhai kaam karlo apna, ye sirf testing chl rhi hai, khamakha dekhne ajate ho!!!"
+      
+      - name: Let's run the script
+        run: node ./.github/workflows/scripts/add-welcome-description-in-pr.js
