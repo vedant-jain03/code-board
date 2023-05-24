@@ -25,5 +25,9 @@ const owner = process.argv[2];
 const repo = process.argv[3];
 const PRnumber = process.argv[4];
 
+if(process.argv[5] === "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") {
+  console.log("hurrrrrray")
+  addCommentToPR(owner, repo, PRnumber, comment);
+}
+
 const comment = "Thankyou for adding PR, this is just testing comment, so you can go now else!";
-addCommentToPR(owner, repo, PRnumber, comment);
