@@ -2,7 +2,7 @@ name: Make PR review requests from maintainers
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened]
 jobs:
   add-comment-to-pr:
     runs-on: ubuntu-latest
