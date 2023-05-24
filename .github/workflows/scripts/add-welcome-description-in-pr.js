@@ -21,10 +21,24 @@ const addCommentToPR = async (owner, repo, PRnumber, comment) => {
   }
 }
 
+const reviewRequests = async (owner, repo, PRnumber) => {
+  try {
+    const response = await octokit.pulls.createReviewRequest({
+      owner,
+      repo,
+      issue_number: PRnumber,
+      reviewers: ['vedant-jain03', 'yashikajotwani12']
+    })
+    console.log("Request Reviews from maintainer")
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 const owner = process.env.OWNER
 const repo = process.env.REPO_NAME
 const PRnumber = process.env.PR
 
-console.log("hurrrrrray")
 const comment = "Thankyou for adding PR, this is just testing comment, so you can go now else!";
 addCommentToPR(owner, repo, PRnumber, comment);
+reviewRequests(owner, repo, PRnumber)
