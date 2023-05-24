@@ -2,7 +2,7 @@ name: Add description to the open PR
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened]
 jobs:
   add-comment-to-pr:
     runs-on: ubuntu-latest
