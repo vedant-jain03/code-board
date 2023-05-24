@@ -6,6 +6,8 @@ on:
 jobs:
   add-comment-to-pr:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
