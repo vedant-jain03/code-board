@@ -1,0 +1,29 @@
+name: Make PR review requests from maintainers
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  add-comment-to-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.ks
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: setup octokit
+        run:  npm i @octokit/rest -f  
+      
+      - name: Comment on the PR
+        run: node ./.github/workflows/scripts/add-welcome-description-in-pr.js
+        env:
+          OWNER: "${{ github.repository_owner }}"
+          REPO_NAME: code-board 
+          PR: "${{ github.event.pull_request.number }}"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
