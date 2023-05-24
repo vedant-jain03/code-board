@@ -23,7 +23,7 @@ const addCommentToPR = async (owner, repo, PRnumber, comment) => {
 
 const reviewRequests = async (owner, repo, PRnumber) => {
   try {
-    const response = await octokit.pulls.createReviewRequest({
+    const response = await octokit.pulls.requestReviewers({
       owner,
       repo,
       issue_number: PRnumber,
