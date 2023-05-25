@@ -18,7 +18,7 @@ jobs:
           node-version: 16
 
       - name: setup octokit
-        run: npm i @octokit/rest
+        run: npm i @octokit/rest -f
 
       - name: run the script
         run: node ./.github/workflows/scripts/assign-issue-to-contributor.js
