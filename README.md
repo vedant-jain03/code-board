@@ -1,9 +1,9 @@
-<h1 align="center"> 
-  
- ✨ Welcome to CodeBoard ✨ 
- 
+<h1 align="center">
+
+ ✨ Welcome to CodeBoard ✨
+
  </h1>
- 
+
 ![CPT2209251107-1510x709 (1)](https://user-images.githubusercontent.com/77020164/192130108-faf3c1e2-2d4b-4e4a-aec1-f9258375d420.gif)
 
 
@@ -61,12 +61,12 @@ CodeBoard is a website solely designed for Teachers and Students, to make learni
 - **Frontend:** ReactJs, SocketIO
 - **Backend:** Express
 - **Version Control:** Git and GitHub
-- **Hosting:** Heroku
+- **Hosting:** Render and GitHub Pages
 - **Code Editor and tools**: VS Code
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-[![Uses Git](https://forthebadge.com/images/badges/uses-git.svg)](https://github.com/vedant-jain03/code_bode) 
+[![Uses Git](https://forthebadge.com/images/badges/uses-git.svg)](https://github.com/vedant-jain03/code_bode)
 [![forthebadge made-with-javascript](http://ForTheBadge.com/images/badges/made-with-javascript.svg)](https://github.com/vedant-jain03/code_bode)
 
 
