@@ -19,7 +19,7 @@ const assignOrComment = async () => {
       issue_number: issue_number
     })
     const hasPendingTriagLabel = issue.labels.some((label) => {
-      return (label.name === "bug")
+      return (label.name === "Pending Traige")
     })
     const assignees = issue.assignees;
     if (hasPendingTriagLabel) {
