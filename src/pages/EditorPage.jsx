@@ -26,7 +26,7 @@ function EditorPage() {
   const [access, setAccess] = useState(false);
   const [terminal, setTerminal] = useState(false);
   const [output, setOutput] = useState("");
-  const [editorOpen, setEditorOpen] = useState(true);
+  const [editorOpen, setEditorOpen] = useState(false);
   const [input, setInput] = useState("");
   const [langCode, setLangCode] = useState("52");
   const handleChat = (e) => {
@@ -115,17 +115,17 @@ function EditorPage() {
     const element = document.createElement("a");
     const file = new Blob([liveCode], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
-    const options = {
-      method: 'GET',
-      url: `https://judge0-ce.p.rapidapi.com/languages/${langCode}`,
-      headers: {
-        'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_API_KEY}`,
-        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
-      }
-    };
+    // const options = {
+    //   method: 'GET',
+    //   url: `https://judge0-ce.p.rapidapi.com/languages/${langCode}`,
+    //   headers: {
+    //     'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_API_KEY}`,
+    //     'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+    //   }
+    // };
     
-    const res = (await axios.request(options)).data;
-    element.download = res.source_file;
+    // const res = (await axios.request(options)).data;
+    element.download = 'main.txt';
     document.body.appendChild(element);
     element.click();
   };
@@ -214,9 +214,9 @@ function EditorPage() {
        {editorOpen && <Terminal output={output} terminal={terminal} setEditorOpen={setEditorOpen} setInput={setInput} input={input} />}
       </div>
       {
-        (clients.length !== 0 && clients[0].username === location.state.username && <button className='btn doubtBtn' style={{ right: '415px' }} onClick={lockAccess} >{access ? 'Lock' : 'Unlock'} Editor</button>)
+        (clients.length !== 0 && clients[0].username === location.state.username && <button className='btn doubtBtn' style={{ right: '300px' }} onClick={lockAccess} >{access ? 'Lock' : 'Unlock'} Editor</button>)
       }
-      <button className='btn doubtBtn' style={{ right: '300px' }} onClick={() => runCode()} >Run Code</button>
+      {/* <button className='btn doubtBtn' style={{ right: '300px' }} onClick={() => runCode()} >Run Code</button> */}
       <button className='btn doubtBtn' style={{ right: '140px' }} onClick={downloadTxtFile}>Download Code</button>
       <button className='btn doubtBtn' onClick={handleChat}>Ask a doubt? </button>
       {isChatShown && <DoubtSection status={setChatShown} setDoubt={setDoubt} doubt={doubt} askDoubt={askDoubt} allDoubts={allDoubts} />}
