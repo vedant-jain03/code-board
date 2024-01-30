@@ -1,6 +1,6 @@
 <h1 align="center">
 
- ✨ Welcome to CodeBoard ✨
+ ✨ Welcome to CodeBoard  ✨
 
  </h1>
 
